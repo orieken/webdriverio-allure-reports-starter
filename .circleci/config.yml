@@ -12,6 +12,9 @@ jobs:
           name: Check install
       - checkout
       - run:
+          name: Make reports dir
+          command: mkdir allure-report
+      - run:
           name: Install Node Modules
           command: npm install
       - run:
