@@ -105,4 +105,6 @@ dist
 
 # reports
 allure-*
-.idea
+.idea/
+reports/
+junit-reports/

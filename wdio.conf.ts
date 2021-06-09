@@ -1,4 +1,5 @@
 const allure = require('allure-commandline');
+
 export const config: WebdriverIO.Config = {
   //
   // ====================
@@ -150,6 +151,12 @@ export const config: WebdriverIO.Config = {
       outputDir: 'allure-results',
       disableWebdriverStepsReporting: true,
       disableWebdriverScreenshotsReporting: true,
+    } ],
+    [ 'junit', {
+      outputDir: './junit-reports',
+      outputFileFormat: function(options: any) { // optional
+        return `results-${options.cid}.${options.capabilities.browserName}.xml`;
+      }
     } ]
   ],
 
