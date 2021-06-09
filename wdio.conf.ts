@@ -66,7 +66,7 @@ export const config: WebdriverIO.Config = {
     // it is possible to configure which logTypes to include/exclude.
     // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
     // excludeDriverLogs: ['bugreport', 'server'],
-    chromeOptions: {
+    'goog:chromeOptions': {
       args: [
         'headless',
         'disable-gpu',
