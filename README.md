@@ -1,0 +1,1 @@
+# webdriverio-allure-reports-starter
