@@ -4,7 +4,20 @@ jobs:
     docker:
       - image: 'cimg/node:16.3.0-browsers'
     steps:
+      - checkout
+      - run:
+          name: Install Node Modules
+          command: npm install
+      - run:
+          name: Execute ESlint Check
+          command: npm run eslint-check
       - run:
           name: Test
-          command: npm test 
-
+          command: npm test wdio.conf.js
+      - store_test_results:
+          path: allure-report
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
