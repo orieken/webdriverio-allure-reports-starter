@@ -1,13 +1,16 @@
 version: 2
+orbs:
+  node: circleci/node@4.3.0
+  browser-tools: circleci/browser-tools@1.1.3
+
 jobs:
   test:
     docker:
       - image: 'cimg/node:16.3.0-browsers'
     steps:
       - checkout
-      - run:
-          name: Install Node Modules
-          command: npm install
+      - browser-tools/install-chrome
+      - node/install-packages
       - run:
           name: Test
           command: npm test wdio.conf.js
